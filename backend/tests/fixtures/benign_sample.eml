@@ -1,0 +1,56 @@
+From: Alice Smith <alice@company.example>
+To: Bob Jones <bob@company.example>
+Subject: Project Roadmap Quarterly Update
+Date: Mon, 12 Oct 2026 09:30:00 +0000
+Message-ID: <cad48921-9981-4231-9012@company.example>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="====_BOUNDARY_BENIGN_001_===="
+Received: from mail-internal.company.example (mail-internal.company.example [198.51.100.1])
+	by mx.company.example (Postfix) with ESMTPS id 4SKL2091
+	for <bob@company.example>; Mon, 12 Oct 2026 09:30:02 +0000 (UTC)
+Authentication-Results: mx.company.example;
+	spf=pass (company.example: 198.51.100.1 designates company.example as permitted sender) smtp.mailfrom=alice@company.example;
+	dkim=pass header.i=@company.example header.s=s2026;
+	dmarc=pass (p=REJECT sp=REJECT) header.from=company.example
+Return-Path: <alice@company.example>
+
+--====_BOUNDARY_BENIGN_001_====
+Content-Type: multipart/alternative; boundary="====_BOUNDARY_BENIGN_ALT_001_===="
+
+--====_BOUNDARY_BENIGN_ALT_001_====
+Content-Type: text/plain; charset="utf-8"
+
+Hi Bob,
+
+Here is the updated roadmap for our upcoming milestone.
+Please review the design document here:
+https://portal.company.example/docs/roadmap-2026
+
+Best regards,
+Alice
+
+--====_BOUNDARY_BENIGN_ALT_001_====
+Content-Type: text/html; charset="utf-8"
+
+<html>
+<body>
+<p>Hi Bob,</p>
+<p>Here is the updated roadmap for our upcoming milestone.</p>
+<p>Please review the design document at <a href="https://portal.company.example/docs/roadmap-2026">https://portal.company.example/docs/roadmap-2026</a>.</p>
+<p>Best regards,<br>Alice</p>
+</body>
+</html>
+
+--====_BOUNDARY_BENIGN_ALT_001_====--
+
+--====_BOUNDARY_BENIGN_001_====
+Content-Type: text/plain; name="meeting_notes.txt"
+Content-Disposition: attachment; filename="meeting_notes.txt"
+Content-Transfer-Encoding: 7bit
+
+Agenda items for tomorrow's standup:
+1. Architecture verification
+2. Review deliverables
+3. Timeline milestones
+
+--====_BOUNDARY_BENIGN_001_====--

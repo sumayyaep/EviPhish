@@ -1,0 +1,62 @@
+From: "Security Helpdesk" <alerts@secure-banking.example>
+Reply-To: credential-collector@external-inbox.example
+Return-Path: <bounces@attacker-relay.example>
+To: target-user@victim-corp.example
+Subject: URGENT: Mandatory Account Verification Required
+Date: Tue, 13 Oct 2026 14:15:00 +0000
+Message-ID: <attack-probe-99812-fake@attacker-relay.example>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="====_BOUNDARY_PHISH_002_===="
+Received: from mail.attacker-relay.example (mail.attacker-relay.example [203.0.113.88])
+	by mx.victim-corp.example (Postfix) with ESMTPS id 87BFF011
+	for <target-user@victim-corp.example>; Tue, 13 Oct 2026 14:15:05 +0000 (UTC)
+Authentication-Results: mx.victim-corp.example;
+	spf=fail (mx.victim-corp.example: domain of bounces@attacker-relay.example does not designate 203.0.113.88 as permitted sender) smtp.mailfrom=bounces@attacker-relay.example;
+	dkim=none;
+	dmarc=fail (p=NONE) header.from=secure-banking.example
+
+--====_BOUNDARY_PHISH_002_====
+Content-Type: multipart/alternative; boundary="====_BOUNDARY_PHISH_ALT_002_===="
+
+--====_BOUNDARY_PHISH_ALT_002_====
+Content-Type: text/plain; charset="utf-8"
+
+Attention Customer,
+
+Your banking access will be suspended within 24 hours due to suspicious login activity.
+Verify your account immediately:
+https://secure-banking.example/verify-login
+
+Support Team
+
+--====_BOUNDARY_PHISH_ALT_002_====
+Content-Type: text/html; charset="utf-8"
+
+<html>
+<body>
+<h2>Urgent Notice: Account Suspension Warning</h2>
+<p>We detected unauthorized login attempts from an unknown device.</p>
+<p>To avoid immediate account termination, please verify your credentials here:</p>
+<p>
+  <!-- Deceptive hyperlink: visible text shows legitimate bank, but href goes to external site -->
+  <a href="https://account-verify-login.credential-harvest.example/portal/auth">https://secure-banking.example/verify-login</a>
+</p>
+<p>Thank you,<br>Fraud Prevention Unit</p>
+</body>
+</html>
+
+--====_BOUNDARY_PHISH_ALT_002_====--
+
+--====_BOUNDARY_PHISH_002_====
+Content-Type: text/html; name="Account_Verification_Form.htm"
+Content-Disposition: attachment; filename="Account_Verification_Form.htm"
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+<body>
+<h3>Offline Account Verification Form</h3>
+</body>
+</html>
+
+--====_BOUNDARY_PHISH_002_====--
